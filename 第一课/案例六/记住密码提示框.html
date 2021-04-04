@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        display: none;
+    }  
+</style>
+
+<body>
+    <label onmouseover="on()" onmouseleave='out()'><input type="checkbox">两周内自动登录</label>
+    <div id="div">为了您的信息安全，请不要在网吧</br>或公用电脑上使用此功能</div>
+</body>
+<script>
+    var DIV =document.getElementById('div')
+  function on(){
+    DIV.style.display='block'
+  }
+  function out(){
+    DIV.style.display='none'
+  }
+</script>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    ul,
+    ol {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    ul li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background-color: aqua;
+        margin-left: 20px;
+    }
+
+    ul li:nth-child(1) {
+        background-color: red;
+    }
+
+    ul li:nth-child(2) {
+        background-color: green;
+    }
+
+    ul li:nth-child(3) {
+        background-color: black;
+    }
+
+    ol li {
+        width: 100px;
+        height: 50px;
+        border: 1px solid green;
+        text-align: center;
+        line-height: 50px;
+    }
+    ol li span:hover{
+            text-decoration: underline;
+        }
+    .active {
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+    }
+</style>
+
+<body>
+    <ul>
+        <li class="tab">
+            <div class="div"></div>
+        </li>
+        <li class="tab">
+            <div class="div"></div>
+        </li>
+        <li class="tab">
+            <div class="div"></div>
+        </li>
+    </ul>
+    <ol>
+        <li><span>新闻</span></li>
+        <li><span>娱乐</span></li>
+        <li><span>体育</span></li>
+        <li><span>电影</span></li>
+        <li><span>音乐</span></li>
+        <li><span>旅游</span></li>
+    </ol>
+</body>
+<script>
+    var main = document.body
+    var tab = document.getElementsByClassName('tab')
+    var ol = document.getElementsByTagName('ol')[0]
+    var div = document.getElementsByClassName('div')
+    var backgroundColor = ['pink', 'yellow', 'blue']
+    var olbackgroundColor = ['red', 'green', '#ccc']
+    for (let istab = 0; istab < tab.length; istab++) {
+        tab[istab].onclick = function () {
+            console.log(istab);
+            main.style.background = backgroundColor[istab]
+            ol.style.background = olbackgroundColor[istab]
+            for (let atab = 0; atab < tab.length; atab++) {
+                div[atab].classList.remove('active')
+            }
+            div[istab].classList.add('active')
+        }
+    }
+</script>
+
+</html>

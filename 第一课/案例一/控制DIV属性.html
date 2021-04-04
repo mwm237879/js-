@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div,
+    p {
+        width: 500px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: black;
+
+    }
+</style>
+
+<body>
+    <div>
+        <p>
+            <button onclick="change(0)">变宽</button>
+            <button onclick="change(1)">变高</button>
+            <button onclick="change(2)">变色</button>
+            <button onclick="change(3)">隐藏</button>
+            <button onclick="change(4)">重置</button>
+        </p>
+        <div class="box">
+        </div>
+    </div>
+
+</body>
+<script>
+    var btn = document.querySelectorAll('button')
+    var box = document.getElementsByClassName('box')[0]
+    console.log(box);
+
+    function change(index) {
+        if (index === 0) {
+            box.style.width = '200px'
+        } else if (index === 1) {
+            box.style.height = '200px'
+        } else if (index === 2) {
+            box.style.backgroundColor = 'red'
+        } else if (index === 3) {
+            box.style.opacity = 0
+        } else {
+            box.removeAttribute('style')
+        }
+    }
+</script>
+
+</html>
